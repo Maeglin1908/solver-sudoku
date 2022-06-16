@@ -44,6 +44,6 @@ Live demo :
 
 ### Hardest ever, really ? 
 
-![Seems that a Finnish mathematician claims to have designed the world's most difficult Sudoku.](https://abcnews.go.com/blogs/headlines/2012/06/can-you-solve-the-hardest-ever-sudoku)
+[Seems that a Finnish mathematician claims to have designed the world's most difficult Sudoku.](https://abcnews.go.com/blogs/headlines/2012/06/can-you-solve-the-hardest-ever-sudoku)
 
 ![Hardest ever sudoku](images/2022-06-16_20-30-25.png)
