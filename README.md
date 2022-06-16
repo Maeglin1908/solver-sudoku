@@ -6,10 +6,17 @@ This project is an implementation of a sudoku solver.
 
 ## Usage
 
-    python app.py samples/grid2-hard.txt
+    python app.py samples/grid1.txt
 
-Just provide a grid as .txt, with in "empty" cells 0 instead.
+    python app.py samples/grid2-hard.txt 10
 
+
+### Arguments 
+
+- grid as .txt, with in "empty" cells 0 instead.
+- Optional : delay in ms between each display of the grid. (0 = Only result will be display)
+
+```
     000410006
     000800900
     905060003
@@ -19,9 +26,17 @@ Just provide a grid as .txt, with in "empty" cells 0 instead.
     700090105
     008002000
     600074000
+```
 
 
 ## Examples
 
+Live demo : 
+
+[![Ascii Cast](https://asciinema.org/a/502207.svg)](https://asciinema.org/a/502207)
+
+
 ![Hard grid](images/2022-06-16_19-55-46.png)
+
+
 ![Simple grid](images/2022-06-16_19-56-09.png)
