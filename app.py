@@ -1,9 +1,10 @@
 import os
 import sys
 from termcolor import colored
+import time
 
-filename = sys.argv[1]
 
+sleep_time = 0
 grid = []
 saved = []
 
@@ -71,15 +72,21 @@ def solve(lig, col):
 		display()
 		return True
 
-	if grid[nextLig][nextCol] > 0 and check() and solve(nextLig, nextCol):
-		return True
-
-	validNumbers = getValidNumbers(nextLig, nextCol)
-	for vn in validNumbers:
-		grid[nextLig][nextCol] = vn
+	if grid[nextLig][nextCol] > 0:
 		if check() and solve(nextLig, nextCol):
 			return True
-		grid[nextLig][nextCol] = 0
+	else:
+
+		validNumbers = getValidNumbers(nextLig, nextCol)
+		for vn in validNumbers:
+			grid[nextLig][nextCol] = vn
+			
+			if sleep_time > 0:
+				display()
+				time.sleep(sleep_time)
+			if check() and solve(nextLig, nextCol):
+				return True
+			grid[nextLig][nextCol] = 0
 
 	return False
 
@@ -96,11 +103,20 @@ def display():
 			if j % 3 == 0 and j > 0:
 				line_numbers += "|"
 			sn = " " + (str(n) if n > 0 else " ") + " "
-			csn = sn if saved[i][j] != 0 else colored(sn, 'green', attrs=['reverse'])
+			if saved[i][j] != 0 or  n == 0:
+				csn = sn
+			else :
+				csn = colored(sn, 'green', attrs=['reverse'])
 			line_numbers += csn + "|"
 		print(line_numbers)
 	print(line)
 
+
+
+filename = sys.argv[1]
+
+if len(sys.argv) == 3:
+	sleep_time = int(sys.argv[2]) / 1000
 
 with open(filename) as f:
     for row in f.readlines():
